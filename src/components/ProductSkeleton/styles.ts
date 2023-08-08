@@ -61,8 +61,8 @@ export const ProductImageSkeleton = styled.div`
 	animation: loading-image 1s infinite ease;
 
 	@media (max-width: 700px) {
-		width: 180px;
-		height: 180px;
+		width: 170px;
+		height: 170px;
 	}
 
 	@keyframes loading-image {

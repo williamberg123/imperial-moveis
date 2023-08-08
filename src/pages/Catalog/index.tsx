@@ -26,13 +26,13 @@ export const Catalog: FC = () => {
 			<PageTitle>Catálogo de produtos</PageTitle>
 			<ProductsContainer>
 				{
-					loading && Array(7).fill('').map(({}, index) => <ProductSkeleton key={`product-skeleton-${index}`} delay={`${0.1 * index}s`} />)
+					true && Array(7).fill('').map(({}, index) => <ProductSkeleton key={`product-skeleton-${index}`} delay={`${0.1 * index}s`} />)
 				}
 
-				{
+				{/* {
 					!loading &&
 					data?.products.map((p: ProductProps, index: number) => <Product key={`product-${index}`} delay={index * 0.1} {...p} />)
-				}
+				} */}
 			</ProductsContainer>
 		</Container>
 	);
