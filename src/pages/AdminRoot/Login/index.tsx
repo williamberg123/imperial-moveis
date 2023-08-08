@@ -16,7 +16,7 @@ export const AdminLogin: FC = () => {
 				<AdminPageSubtitle>Adicione, edite e remova informações quando quiser</AdminPageSubtitle>
 			</AdminPageContent>
 
-			<Form onSubmitFunc={(e) => {e.preventDefault()}}>
+			<Form onSubmitFunc={() => {}}>
 				<FormTitle>Admin</FormTitle>
 
 				<FormLabel>

@@ -3,7 +3,7 @@ import { FormContainer } from './styles';
 
 interface FormProps {
 	children: ReactNode;
-	onSubmitFunc: (e?) => void;
+	onSubmitFunc: () => void;
 }
 
 export const Form: FC<FormProps> = ({ onSubmitFunc, children }) => {
