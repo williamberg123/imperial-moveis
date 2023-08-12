@@ -9,10 +9,6 @@ export const Container = styled.div`
 	flex-wrap: wrap;
 	padding: 20px;
 
-	@media (max-width: 700px) {
-		align-items: center;
-	}
-
 	@media (max-width: 500px) {
 		& form {
 			width: 100%;

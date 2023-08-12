@@ -29,11 +29,19 @@ export const FormInput = styled.input`
 `;
 
 export const FormSubmitButton = styled(FormInput)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin-top: 20px;
 	background-color: ${({theme}) => theme.colors.yellow};
 	color: ${({theme}) => theme.colors.white};
 	font-weight: bold;
 	cursor: pointer;
+	padding: 0px;
+
+	& > svg {
+		width: 100px;
+	}
 `;
 
 export const FormTitle = styled.span`
