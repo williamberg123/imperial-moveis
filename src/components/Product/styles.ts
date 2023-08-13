@@ -63,9 +63,8 @@ export const Figure = styled.figure`
 export const ProductImage = styled.img<{ isWiderThanTall: boolean }>`
 	display: flex;
 	border-radius: 10px;
-	${
-	({isWiderThanTall}) => isWiderThanTall
-	? css`height: 250px`
-	: css`width: 100%`
+	${({ isWiderThanTall }) => isWiderThanTall
+		? css`height: 250px`
+		: css`width: 100%`
 	}
 `;
