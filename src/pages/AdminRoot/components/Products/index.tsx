@@ -6,7 +6,7 @@ import { GET_PRODUCTS_QUERY } from '../../../../services/apollo/querys';
 import { ProductProps } from '../../../../@types/product';
 
 export const Products: FC = () => {
-	const { data, loading } = useQuery(GET_PRODUCTS_QUERY);
+	const { data } = useQuery(GET_PRODUCTS_QUERY);
 	console.log(data);
 
 	return (
