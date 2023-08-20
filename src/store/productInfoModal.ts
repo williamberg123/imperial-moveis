@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { ProductInfoModalProps } from '../@types/product';
 
 export const initialState: ProductInfoModalProps = {
+	id: '',
 	isOpen: false,
 	name: '',
 	image: {
