@@ -1,9 +1,10 @@
 import { FC } from 'react';
+
+import { useAdminContext } from '../../../../hooks/useAdminContext';
 import { Container, Li, LinkNavigation, UlNavigation } from './styles';
-import { usePageContext } from '../../../../hooks/usePageContext';
 
 export const AdminNavBar: FC = () => {
-	const { adminPageLoadingOption, changeAdminPageLoadingOption } = usePageContext();
+	const { adminPageLoadingOption, changeAdminPageLoadingOption } = useAdminContext();
 
 	return (
 		<Container>

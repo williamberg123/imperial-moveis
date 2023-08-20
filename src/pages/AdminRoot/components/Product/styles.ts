@@ -68,4 +68,10 @@ export const EditButton = styled.button`
 	border: none;
 	background-color: ${({theme}) => theme.colors.yellow};
 	cursor: pointer;
+
+	&:hover {
+		background-color: ${({theme}) => theme.colors.gray};
+	}
 `;
+
+export const DeleteButton = styled(EditButton)``;

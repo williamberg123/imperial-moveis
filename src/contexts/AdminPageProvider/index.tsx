@@ -14,11 +14,14 @@ export interface AdminPageContextType {
 	changeAdminPageLoadingOption: (option: AdminPageLoadingOptions) => void;
 	admin: User | null;
 	changeAdmin: (a: User) => void;
+	isOpenNewProductModal: boolean;
+	toggleNewProductModal: () => void;
 }
 
 export const AdminPageProvider = ({ children }: AdminPageProviderProps) => {
 	const [adminPageLoadingOption, setAdminPageLoadingOption] = useState<AdminPageLoadingOptions>('home');
 	const [admin, setAdmin] = useState<User | null>(null);
+	const [isOpenNewProductModal, setIsOpenNewProductModal] = useState(false);
 
 	const changeAdminPageLoadingOption = (option: AdminPageLoadingOptions) => {
 		setAdminPageLoadingOption(option);
@@ -28,9 +31,18 @@ export const AdminPageProvider = ({ children }: AdminPageProviderProps) => {
 		setAdmin(adminData);
 	};
 
-	const context = useMemo<AdminPageContextType>(() => ({
-		adminPageLoadingOption, changeAdminPageLoadingOption, admin, changeAdmin,
-	}), [adminPageLoadingOption, changeAdminPageLoadingOption, admin, changeAdmin]);
+	const toggleNewProductModal = () => {
+		setIsOpenNewProductModal((s) => !s);
+	};
+
+	const context = useMemo<AdminPageContextType>(() => (
+		{
+			adminPageLoadingOption, changeAdminPageLoadingOption, admin, changeAdmin, isOpenNewProductModal,
+			toggleNewProductModal
+		}
+	),
+		[adminPageLoadingOption, changeAdminPageLoadingOption, admin, changeAdmin, isOpenNewProductModal, toggleNewProductModal]
+	);
 
 	return (
 		<AdminPageContext.Provider value={context}>

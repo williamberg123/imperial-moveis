@@ -20,6 +20,7 @@ export const GET_SECTIONS_QUERY = gql`
 export const GET_PRODUCTS_QUERY = gql`
 	query GetProducts {
 		products {
+			id
 			name
 			description
 			image {

@@ -6,7 +6,7 @@ import { FieldValues, useForm } from 'react-hook-form';
 
 import { Form } from '../../../components/Form';
 import { toLogUser } from '../../../services/firebase/login';
-import { usePageContext } from '../../../hooks/usePageContext';
+import { useAdminContext } from '../../../hooks/useAdminContext';
 import { FormInput, FormLabel, FormSubmitButton, FormTitle } from '../../../components/Form/styles';
 import { AdminPageContent, AdminPageSubtitle, AdminPageTitle, Container } from './styles';
 import { User } from 'firebase/auth';
@@ -14,7 +14,7 @@ import { User } from 'firebase/auth';
 export const AdminLogin: FC = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const { handleSubmit, register } = useForm();
-	const { changeAdmin } = usePageContext();
+	const { changeAdmin } = useAdminContext();
 	const navigate = useNavigate();
 
 	const onSubmit = async (data: FieldValues) => {
