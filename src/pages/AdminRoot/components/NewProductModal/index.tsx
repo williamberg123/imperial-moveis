@@ -6,10 +6,20 @@ import { ChangeEvent, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { CgCloseO } from 'react-icons/cg';
 import { useAdminContext } from '../../../../hooks/useAdminContext';
+import { useMutation } from '@apollo/client';
+import { CREATE_PRODUCT_MUTATION } from '../../../../services/apollo/mutations';
+import { GET_PRODUCTS_QUERY } from '../../../../services/apollo/querys';
+import { uploadProductImage } from '../../../../services/hygraph';
 
 export const NewProductModal = () => {
 	const [image, setImage] = useState<File | null>(null);
 	const { handleSubmit, register } = useForm();
+	const [createProduct,] = useMutation(CREATE_PRODUCT_MUTATION, {
+		refetchQueries: [
+			GET_PRODUCTS_QUERY,
+		]
+	});
+
 	const { toggleNewProductModal } = useAdminContext();
 
 	const onChoose = (e: ChangeEvent<HTMLInputElement>) => {
@@ -20,12 +30,17 @@ export const NewProductModal = () => {
 		}
 	};
 
-	const onSubmit = (data: FieldValues) => {
-		data = {
-			...data,
-			image: data.image[0],
-		}
-		console.log(data);
+	const onSubmit = async (data: FieldValues) => {
+		// data = {
+		// 	...data,
+		// 	image: data.image[0],
+		// }
+
+		await uploadProductImage({ file: data.image[0] });
+
+		// await createProduct({
+		// 	variables: data,
+		// })
 	};
 
 	return (

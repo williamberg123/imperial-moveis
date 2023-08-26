@@ -7,7 +7,7 @@ export const Container = styled.div`
 	border-radius: 10px;
 
 	@media (max-width: 600px) {
-		width: 200px;
+		width: 190px;
 	}
 `;
 
@@ -45,12 +45,20 @@ export const ProductName = styled.span`
 	color: ${({theme}) => theme.colors.yellow};
 	white-space: nowrap;
 	overflow: hidden;
+
+	@media (max-width: 600px) {
+		font-size: 0.9rem;
+	}
 `;
 
 export const ProductDescription = styled.span`
 	font-weight: 300;
 	white-space: nowrap;
 	overflow: hidden;
+
+	@media (max-width: 600px) {
+		font-size: 0.8rem;
+	}
 `;
 
 export const ProductActionsContainer = styled.div`
